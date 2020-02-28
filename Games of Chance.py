@@ -127,7 +127,7 @@ def roulette(bet, guess):
   elif guess == "snake" and result in snake:
     print("You win! $" + str(bet*2) + " has been credited to your account.")
     return bet*2
-  elif result != "00" and result != 0:
+  elif type(guess) is str and result != "00" and result != 0:
     if (guess == "red" and (((result < 11 or 18 < result < 29) and result % 2 == 1) or ((10 < result < 19 or result > 28) and result % 2 == 0))) or (guess == "black" and (((result < 11 or 18 < result < 29) and result % 2 == 0) or (10 < result < 19 or result > 28) and result % 2 == 1)) or (guess == "odd" and result % 2 == 1) or (guess == "even" and result % 2 == 0) or (guess == "1 to 18" and result <= 18) or (guess == "19 to 36" and result >= 19):
       print("You win! $" + str(bet) + " has been credited to your account.")
       return bet
